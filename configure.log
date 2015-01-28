@@ -1,0 +1,190 @@
+--------------------
+./configure
+二  1月 27 14:56:55 CST 2015
+=== ztest4762.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+/home/cloudchen/emsdk_portable/emscripten/master/emcc -c ztest4762.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest4762.c ===
+int foo() { return 0; }
+===
+/home/cloudchen/emsdk_portable/emscripten/master/emcc -c ztest4762.c
+
+Checking for shared library support...
+=== ztest4762.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+/home/cloudchen/emsdk_portable/emscripten/master/emcc -w -c -fPIC ztest4762.c
+/home/cloudchen/emsdk_portable/emscripten/master/emcc -fPIC -o ztest4762.so ztest4762.o
+clang-3.4: warning: argument unused during compilation: '-nostdinc'
+clang-3.4: warning: argument unused during compilation: '-Xclang -nobuiltininc'
+clang-3.4: warning: argument unused during compilation: '-Xclang -nostdsysteminc'
+clang-3.4: warning: argument unused during compilation: '-Xclang -isystem/home/cloudchen/emsdk_portable/emscripten/master/system/local/include'
+clang-3.4: warning: argument unused during compilation: '-Xclang -isystem/home/cloudchen/emsdk_portable/emscripten/master/system/include/compat'
+clang-3.4: warning: argument unused during compilation: '-Xclang -isystem/home/cloudchen/emsdk_portable/emscripten/master/system/include'
+clang-3.4: warning: argument unused during compilation: '-Xclang -isystem/home/cloudchen/emsdk_portable/emscripten/master/system/include/emscripten'
+clang-3.4: warning: argument unused during compilation: '-Xclang -isystem/home/cloudchen/emsdk_portable/emscripten/master/system/include/libc'
+clang-3.4: warning: argument unused during compilation: '-Xclang -isystem/home/cloudchen/emsdk_portable/emscripten/master/system/lib/libc/musl/arch/js'
+clang-3.4: warning: argument unused during compilation: '-Xclang -isystem/home/cloudchen/emsdk_portable/emscripten/master/system/include/libcxx'
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 0 has invalid symbol index 11
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 1 has invalid symbol index 12
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 2 has invalid symbol index 2
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 3 has invalid symbol index 2
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 4 has invalid symbol index 11
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 5 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 6 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 7 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 8 has invalid symbol index 12
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 9 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 10 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 11 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 12 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 13 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 14 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 15 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 16 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 17 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 18 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 19 has invalid symbol index 21
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_line): relocation 0 has invalid symbol index 2
+/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o: In function `_start':
+(.text+0x20): 未定義參考到「main」
+clang-3.4: error: linker command failed with exit code 1 (use -v to see invocation)
+(exit code 1)
+No shared library support; try without defining CC and CFLAGS
+Building static library libz.a version 1.2.8 with /home/cloudchen/emsdk_portable/emscripten/master/emcc.
+
+=== ztest4762.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+/home/cloudchen/emsdk_portable/emscripten/master/emcc -c -D_LARGEFILE64_SOURCE=1 ztest4762.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest4762.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+/home/cloudchen/emsdk_portable/emscripten/master/emcc -D_LARGEFILE64_SOURCE=1 -o ztest4762 ztest4762.c
+Checking for strerror... Yes.
+
+=== ztest4762.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+/home/cloudchen/emsdk_portable/emscripten/master/emcc -c -D_LARGEFILE64_SOURCE=1 ztest4762.c
+Checking for unistd.h... Yes.
+
+=== ztest4762.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+/home/cloudchen/emsdk_portable/emscripten/master/emcc -c -D_LARGEFILE64_SOURCE=1 ztest4762.c
+Checking for stdarg.h... Yes.
+
+=== ztest4762.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+/home/cloudchen/emsdk_portable/emscripten/master/emcc -c -D_LARGEFILE64_SOURCE=1 ztest4762.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest4762.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+/home/cloudchen/emsdk_portable/emscripten/master/emcc -D_LARGEFILE64_SOURCE=1 -o ztest4762 ztest4762.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest4762.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+/home/cloudchen/emsdk_portable/emscripten/master/emcc -c -D_LARGEFILE64_SOURCE=1 ztest4762.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest4762.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+/home/cloudchen/emsdk_portable/emscripten/master/emcc -c -D_LARGEFILE64_SOURCE=1 ztest4762.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static all64
+AR = /home/cloudchen/emsdk_portable/emscripten/master/emar
+ARFLAGS = rc
+CC = /home/cloudchen/emsdk_portable/emscripten/master/emcc
+CFLAGS = -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = /home/cloudchen/emsdk_portable/emscripten/master/emcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = /home/cloudchen/emsdk_portable/emscripten/master/emcc
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = /home/cloudchen/emsdk_portable/emscripten/master/emranlib
+SFLAGS = -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB =
+SHAREDLIBM =
+SHAREDLIBV =
+STATICLIB = libz.a
+TEST = all teststatic test64
+VER = 1.2.8
+Z_U4 =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /usr/local
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
